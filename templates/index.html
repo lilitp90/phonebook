@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main-content %}
+
+<div class="col-md-6" id="uploader">
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group files color">
+            <label style="font-size: large;"> <i>Upload an excel file please! </i></label>
+            <input type="file" name="to_be_uploaded" class="form-control" required />
+        </div>
+
+        <input type="submit" value="Upload" />
+    </form>
+</div>
+
+{% endblock main-content %}
